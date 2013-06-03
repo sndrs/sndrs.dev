@@ -4,8 +4,8 @@
 # it doesn't work, check if it is set in the Gruntfile. There is also a
 # _config.build.yml to set custom overrides for `grunt build`.
 
-name: portfolio
-description: Alex Sanders’ portfolio
+name: Alex Sanders’ portfolio
+description: Alex Sanders’ portfolio of music, design & advanced front-end web development.
 
 author:
   name: Alex Sanders
