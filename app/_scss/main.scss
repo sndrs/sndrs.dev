@@ -41,7 +41,7 @@ em, q {
   font-style: italic;
 }
 
-code {
+code, kbd {
   font-family: Inconsolata, Menlo, Consolas, "Panic Sans", Courier, monospace;
   @include adjust-font-size-to(13px);
 }
