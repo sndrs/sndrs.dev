@@ -1,0 +1,8 @@
+<li class="entry" data-type="{{ post.categories }}">
+  {% if post.title %}<h2>{{ post.title }}</h2>{% endif %}
+  {% if post.role %}<p class="role">{{ post.role }}</p>{% endif %}
+  {% include date.html %}
+  {% if post.content %}<div class="content">{{ post.content }}</div>{% endif %}
+  {% if post.external_url %}<a class="external_url" href="{{post.external_url}}">{{post.external_url}}</a>{% endif %}
+  {% if post.tech %}<p class="tech">{{ post.tech | join: ', ' }}.</p>{% endif %}    
+</li>

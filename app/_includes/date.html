@@ -1,0 +1,10 @@
+{% if post.start or post.end %}
+  <div class="time">
+    {% if post.start %}
+      <time class="start" data-date="{{post.start}}">{{ post.start | date: "%m/%Y" }}</time>
+    {% endif %}
+    {% if post.end %}
+      — <time class="end" data-date="{{post.end}}">{{ post.end | date: "%m/%Y" }}</time>
+    {% endif %}
+  </div>
+{% endif %}
