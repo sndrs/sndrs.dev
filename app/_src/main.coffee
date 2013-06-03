@@ -11,15 +11,20 @@ $ ->
   $('#works').timeline()
   $('[data-fancy-content]').click (e) -> 
     e.preventDefault() 
-    $.fancybox($("##{$(@).data('fancy-content')}").children().map(-> href: $(this).data('src')),{
-      loop: false, 
-      nextEffect: 'fade'
+    $.fancybox($("##{$(@).data('fancy-content')}").children().map( -> 
+      $this = $(this)
+      href: $this.data('src')
+      title: $this.attr('alt')
+    ).toArray(), {
+      loop: false
+      openEffect: 'fade'
+      closeEffect: 'fade'
+      nextEffect: 'elastic'
+      prevEffect: 'elastic'
+      caption: 
+        type: 'inside'
+      theme: 'light'        
     })
-  $('.fancybox-media').fancybox({
-    helpers : {
-      media : {}
-    }
-  })
 
 
 

@@ -311,7 +311,10 @@ module.exports = function (grunt) {
             '<%= yeoman.js %>/**/*',
             '<%= yeoman.css %>/**/*',
             '<%= yeoman.img %>/**/*',
-            '<%= yeoman.fonts %>/**/*'
+            '<%= yeoman.fonts %>/**/*',
+            // Exclude these from build - add them to usemin blocks if you need files from here.
+            '!js/**',
+            '!css/**'
           ],
           dest: '<%= yeoman.dist %>'
         }]
