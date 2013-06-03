@@ -3,15 +3,15 @@ title:  "TheStreet.com, UK"
 categories: work
 start: 1999-10-01
 end: 2000-08-01
-role: Lead Interaction Designer and Front-end Developer
+role: Lead interaction designer and front-end developer
 tech: 
  - DHTML
  - CSS
  - Photoshop
 ---
 
-Re-joined many of the FT.com project team to take overall responsibility for UI/UX and client-side code on the UK launch of TheStreet.com(.co.uk).
+I was invited to join many of my former FT.com colleagues (see below) at the launch of TheStreet.co.uk, the UK sister of TheStreet.com. 
 
-Led a complete redesign and build, that took revenues beyond the forecasts.
+I took overall responsibility for UI/UX and client-side code, and led a complete redesign and build, which took revenues beyond the forecasts.
 
-The shuttering of the .co.uk—due largely to the under-performing .com—was one of the first closures to mark bursting of the .COM bubble :-)
+I also designed a series of twenty adverts for display on the London Underground and across the web.

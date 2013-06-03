@@ -9,4 +9,4 @@ tech:
  - CSS
 ---
 
-Remade Flash presentations in DHMTL for National Westminster Bank, and coded the front-end for BAE Systems graduate recruitment site and Sharepeople.com.
+I remade Flash presentations in DHMTL for National Westminster Bank, and coded the front end for the BAE Systems graduate recruitment site and Sharepeople.com.
