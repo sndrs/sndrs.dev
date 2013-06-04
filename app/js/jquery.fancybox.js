@@ -11,7 +11,7 @@
  */
 
 (function (window, document, $, undefined) {
-  "use strict";
+    "use strict";
 
   var W  = $(window),
     D  = $(document),
@@ -2330,7 +2330,8 @@
     $("<style type='text/css'>.fancybox-margin{margin-right:" + F.lockMargin + "px;}</style>").appendTo("head");
 
     // Auto start
-    if ($("script[src*='jquery.fancybox.js']").attr('src').match(/autorun/) ){
+    var _ref;
+    if ((_ref = $("script[src*='jquery.fancybox.js']").attr("src")) != null ? _ref.match(/autorun/) : void 0){
       $("a[href$='.jpg'],a[href$='.png'],a[href$='.gif'],.fancybox").attr('data-fancybox-group', 'gallery').fancybox();
     }
   });
