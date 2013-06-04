@@ -33,7 +33,8 @@ a {
   text-decoration: none;
   font-style: italic;
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #bb0000;
   }  
 }
 
@@ -208,18 +209,40 @@ code, kbd {
       @include leader(1);
     }
     a {
+      @include transition-property(border-color color background-color);
+      @include transition-duration(100ms);
       cursor: pointer;
-      color: $text-color;
       font-style: normal;
-      text-decoration: underline;
+      color: $text-color; 
+      padding: 0 0.3ex;
+      display: inline-block;
+      background-color: darken(white, 1);
+      text-decoration: none;
+      border-color: darken(white, 9);
+      border-style: solid;
+      border-left-width: 1px;     
+      border-bottom-width: 1px;  
       &:after {
         content: ' →';
         text-decoration: none;
         font-size: 12px;
+      }
+      &[data-fancy-content] {
+          border-left-width: 0px;           
+          border-right-width: 1px; 
+          margin-right: 1px;
+        &:after {
+          content: '';
+          font-size: 15px;
+          color: #cc0000;
+        }
+        &:hover {
+        };
       };
-      &[data-fancy-content]:after {
-        content: '';
-      };
+      &:hover {
+        border-color: darken(white, 13);
+        color: #bb0000; 
+      }
     }
   }
   .external_url {
