@@ -278,3 +278,7 @@ code, kbd {
   @include transition-property(background-color);
   @include transition-duration(150ms);
 }
+
+@media print {
+  @import 'print';
+}

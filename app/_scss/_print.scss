@@ -1,0 +1,62 @@
+* {
+  background-color: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  border: none !important;
+  width: auto !important;
+  height: auto !important;
+  color: #000 !important;
+  font-size: 13px !important;
+}
+body {
+  padding: 4em !important;
+}
+#timelines {
+  display: none;
+}
+
+h1 {
+  font-size: 2em !important;
+  margin-bottom: 0.5em !important;
+  small {
+    font-size: 0.5em !important;
+  }
+}
+#contact li {
+  display: block!important;
+}
+#contact li:first-child:before {
+  content: 'Email: ';
+}
+#contact li:last-child:before {
+  content: 'Twitter: ';
+}
+h2 {
+  font-size: 1.5em !important;
+  margin-top: 2em !important;
+  margin-bottom: 0.5em !important;
+  font-weight: bold;
+}
+.entry, .content p, .tech, .external_url {
+  display: block;
+  margin-top: 1em !important; 
+}
+
+.tech:before {
+  content: 'Technologies: ';
+}
+
+a:before, a:after {
+  content: '' !important;
+};
+
+#updated {
+  border-top: 1px solid black !important;
+  margin-top: 1em !important;
+  padding-top: 1em !important;
+}
