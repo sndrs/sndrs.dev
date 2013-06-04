@@ -61,16 +61,6 @@ do ($ = jQuery) ->
 
         $('#timelines').append timelineEvents
 
-        # Call this onload to handle the late arrival of fonts.
-        $window.load -> getPositions()
-        $window.resize ->
-          clearTimeout resizing if resizing
-          resizing = setTimeout getPositions, 100
-        $window.bind 'scroll.timeline', ->     
-          unless updatingTimeline
-            updatingTimeline = true
-            requestAnimFrame updateTimeline
-
         getPositions = (callback) ->
           console.log 'getPositions'
           documentHeight = $document.height()
@@ -87,6 +77,12 @@ do ($ = jQuery) ->
             $timelineEvent.data 'bottom', top + $timelineEvent.outerHeight(true)
 
           updateTimeline()
+
+        skroll = ->
+          unless updatingTimeline
+            updatingTimeline = true
+            requestAnimFrame updateTimeline
+          requestAnimFrame skroll
 
         updateTimeline = ->
           scrollTop = $window.scrollTop()  
@@ -112,3 +108,15 @@ do ($ = jQuery) ->
                     'border-color': data.bgColor
 
           updatingTimeline = false    
+
+        # Call this onload to handle the late arrival of fonts.
+        $window.load -> getPositions()
+        $window.resize ->
+          clearTimeout resizing if resizing
+          resizing = setTimeout getPositions, 100
+
+        # If mobile, don't bind to scroll, just update whenever you can. 
+        unless (/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test navigator.userAgent or navigator.vendor or window.opera
+          $window.bind 'scroll.timeline', skroll
+        else
+          requestAnimFrame skroll
