@@ -6,13 +6,10 @@ $bg-color: #fff;
 $text-color: #333;
 $highlight-bg-color: transparentize(#000, .96);
 
-background-color: $bg-color;
-color: $text-color;
--webkit-overflow-scrolling: touch;
-
 body {
   color: $text-color;
   background-color: $bg-color;
+  -webkit-overflow-scrolling: touch;
 }
 
 a {
