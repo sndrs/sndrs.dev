@@ -8,7 +8,7 @@ window.requestAnimFrame = do ->
   (callback) -> window.setTimeout callback, 1000 / 60
 
 $ ->
-  $('#works').timeline()
+  $('#entries').timeline()
   $('[data-fancy-content]').click (e) -> 
     e.preventDefault() 
     $.fancybox($("##{$(@).data('fancy-content')}").children().map( -> 

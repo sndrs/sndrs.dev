@@ -1,62 +1,95 @@
-* {
-  background-color: transparent !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  position: relative !important;
-  left: auto !important;
-  right: auto !important;
-  top: auto !important;
-  bottom: auto !important;
-  border: none !important;
-  width: auto !important;
-  height: auto !important;
-  color: #000 !important;
-  font-size: 13px !important;
-}
+$base-font-size: 12px;
+$base-line-height: 17px;
+@include establish-baseline();
+
+$bg-color: #fff;
+$text-color: #000;
+
 body {
-  padding: 4em !important;
+  padding: rhythm(4);
+  color: $text-color;
+  background-color: $bg-color;
 }
+
 #timelines {
   display: none;
 }
 
 h1 {
-  font-size: 2em !important;
-  margin-bottom: 0.5em !important;
-  small {
-    font-size: 0.5em !important;
+  @include adjust-font-size-to($base-font-size * 4);
+}
+
+#colophon {
+}
+
+#contact {
+  dt {
+    display: inline-block;
+    padding-right: 1ex;
+    &:after {
+      content: ': ';
+    }
+  }
+  dd {
+    display: inline-block;
+    margin-right: 1em;
   }
 }
-#contact li {
-  display: block!important;
-}
-#contact li:first-child:before {
-  content: 'Email: ';
-}
-#contact li:last-child:before {
-  content: 'Twitter: ';
-}
-h2 {
-  font-size: 1.5em !important;
-  margin-top: 2em !important;
-  margin-bottom: 0.5em !important;
-  font-weight: bold;
-}
-.entry, .content p, .tech, .external_url {
-  display: block;
-  margin-top: 1em !important; 
+
+em, q {
+  font-style: italic;
 }
 
-.tech:before {
-  content: 'Technologies: ';
+code, kbd {
+  font-family: Inconsolata, Menlo, Consolas, "Panic Sans", Courier, monospace;
+  @include adjust-font-size-to(11px);
 }
 
-a:before, a:after {
-  content: '' !important;
+.activity {
+  font-style: italic;
+}
+
+.detail {
+  @include adjust-font-size-to($base-font-size * 0.8);
+}
+
+.entry {
+  page-break-inside: avoid
+}
+
+.entry-title {
+  @include leader(1);
+  @include adjust-font-size-to($base-font-size * 2);
+}
+
+.entry-content {
+  p {
+    @include leader(0.5);
+  }
+  .fancy-content {
+    display: none;
+  }
+}
+
+.entry-external-url {
+  @include padding-leader(1);
+  display: inline-block;
+}
+
+.entry-tech {
+  @include leader(0.5);
+  &:before {
+    content: 'Technologies: ';
+    font-style: italic;
+  }
+}
+
+a {
+  
 };
 
 #updated {
-  border-top: 1px solid black !important;
-  margin-top: 1em !important;
-  padding-top: 1em !important;
+  border-top: 1px solid black;
+  margin-top: rhythm(2);
+  padding-top: rhythm();
 }

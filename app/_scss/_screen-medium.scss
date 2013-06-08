@@ -1,0 +1,71 @@
+#colophon {
+  position: fixed;
+  top: rhythm(2);
+  right: rhythm();
+  left: rhythm(26);
+  text-align: left;
+  background-color: $bg-color;
+  border: none;
+  margin: 0;
+  padding: 0;
+  h1 {
+    @include adjust-font-size-to($base-font-size * 1.5);
+    @include leader(0.1);
+    @include adjust-leading-to(1);
+  }
+  dl {
+    @include leader(0);
+  }
+}
+
+#entries {
+  position: absolute;
+  top: rhythm();
+  left: rhythm(3);
+  width: rhythm(22);
+  padding-bottom: rhythm();
+  text-align: left;
+}
+
+.entry {  
+  border-left: 2px solid $bg-color;
+  border-top: none;
+  background-color: $highlight-bg-color;
+  @include margin-trailer();
+  &:last-child {
+    @include margin-trailer(0);
+  }
+}
+
+.entry-tech {
+  background-color: transparent;
+  text-align: left;
+  padding: 0;
+  @include margin-leader(1.6); 
+  @include trailer(0); 
+}
+
+#timelines {
+  position: fixed;  
+  width: rhythm();
+  top: rhythm();
+  bottom: rhythm();
+  left: rhythm();
+}
+
+.timeline-event {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  background-color: $highlight-bg-color;
+  @include transition-property(background-color);
+  @include transition-duration(150ms);
+}
+
+#updated {
+  position: fixed;
+  bottom: rhythm(0);
+  left: rhythm(37);
+  @include adjust-font-size-to($base-font-size * 0.7);
+  color: #dedede;  
+}
