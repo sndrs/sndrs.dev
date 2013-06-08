@@ -7,10 +7,8 @@ do ($ = jQuery) ->
     if $('#timelines').is(":visible")
       $document = $(document)
       $window = $(window)
-      documentHeight = $document.height()
-      windowHeight = $window.height()
-      updatingTimeline = false
-      resizing = false
+      documentHeight = windowHeight = null
+      updatingTimeline = resizing = false
 
       defaults =
         startDate: Date.now()/ 1000 / 60 / 60 / 24
@@ -29,9 +27,9 @@ do ($ = jQuery) ->
         $events = $this.find('.entry')
         
         # Work out how long the timeline is, based on the text in the `<time>` elements.
-        # Assumes $events elements are already ordered, recent first.        
+        # Assumes $events elements are already ordered, recent first and that they will all contain at least a .start element.        
         $firstEvent = $events.first()
-        @endDate = new Date($firstEvent.find('.end').data('date') or $firstEvent.find('.start').data('date'))
+        @endDate = new Date $firstEvent.find('.end').data('date') ? $firstEvent.find('.start').data('date')
         @startDate = new Date $events.last().find('.start').data('date')
         timelineDuration = (Date.parse(@endDate) - Date.parse(@startDate)) / 1000 / 60 / 60 / 24
 
@@ -45,13 +43,10 @@ do ($ = jQuery) ->
             startDate: Math.round Date.parse($start.data('date')) / 1000 / 60 / 60 / 24
             endDate: Math.round Date.parse($end.data('date')) / 1000 / 60 / 60 / 24 unless $end.length is 0
             eventEl: $event
-            highlight: "##{settings.colours[i%settings.colours.length]}" #color.get(true, 0.9, 0.99999)
+            highlight: "##{settings.colours[i%settings.colours.length]}"
 
           top = Math.floor (settings.startDate - (data.endDate ? data.startDate)) / timelineDuration * 100
           bottom = 100 - Math.floor (settings.startDate - data.startDate) / timelineDuration * 100
-
-          # $event.css borderLeftColor: data.highlight
-
           $("<a id='tl_#{$event.attr 'id'}' class='timeline-event' />").data(data).css(
             "top": "#{top}%"
             "bottom": "#{Math.min bottom, 99 - top}%" if data.endDate? 
@@ -63,16 +58,21 @@ do ($ = jQuery) ->
 
         # Call this onload to handle the late arrival of fonts.
         $window.load -> getPositions()
+
+        # Update all the element positions, throttled to wait 100ms after event fires or start again.
         $window.resize ->
           clearTimeout resizing if resizing
           resizing = setTimeout getPositions, 100
+
+        # Bind to scroll
         $window.bind 'scroll.timeline', ->     
           unless updatingTimeline
             updatingTimeline = true
             requestAnimFrame updateTimeline
 
+
+        # store the position of the elements needed to update the timeline.
         getPositions = (callback) ->
-          console.log 'getPositions'
           documentHeight = $document.height()
           windowHeight = $window.height()
 
