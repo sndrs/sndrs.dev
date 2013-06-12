@@ -40,11 +40,15 @@ code, kbd {
   @include adjust-font-size-to($base-font-size * 0.7);
 }
 
+#timelines {
+  display: none;
+}
 .entry {
   padding: rhythm(1);
   border-left: none;
   background-color: $bg-color;
-  border-top: 1px dotted #efefef;
+  border-top: 1px solid #efefef;
+  border-left: 2px solid $bg-color;
   text-align: left;
 }
 
@@ -121,7 +125,11 @@ code, kbd {
   margin-bottom: -1px;
   z-index: 10;
   h1 {
-    @include adjust-font-size-to($base-font-size * 2);
+    @include adjust-font-size-to($base-font-size * 1.5);
+    @include adjust-leading-to(1);
+  }
+  h3 {
+    @include leader(0);
   }
   dl {
     @include leader();

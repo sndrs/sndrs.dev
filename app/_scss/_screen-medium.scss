@@ -9,9 +9,10 @@
   margin: 0;
   padding: 0;
   h1 {
-    @include adjust-font-size-to($base-font-size * 1.5);
     @include leader(0.1);
-    @include adjust-leading-to(1);
+  }
+  h3 {
+    @include leader(1);
   }
   dl {
     @include leader(0);
@@ -46,6 +47,7 @@
 }
 
 #timelines {
+  display: block;
   position: fixed;  
   width: rhythm();
   top: rhythm();
