@@ -43,18 +43,17 @@ code, kbd {
 #timelines {
   display: none;
 }
+
 .entry {
   padding: rhythm(1);
-  border-left: none;
   background-color: $bg-color;
   border-top: 1px solid #efefef;
-  border-left: 2px solid $bg-color;
   text-align: left;
 }
 
 .entry-title {
-  @include adjust-font-size-to($base-font-size * 2);
-  @include adjust-leading-to(0.8);
+  @include adjust-font-size-to($base-font-size * 1.5);
+  @include adjust-leading-to(1);
 }
 
 .entry-content {
@@ -67,33 +66,28 @@ code, kbd {
     cursor: pointer;
     font-style: normal;
     color: $text-color; 
-    padding: 0 0.45ex;
-    display: inline-block;
-    background-color: darken(white, 1);
-    text-decoration: none;
-    border-color: darken(white, 9);
-    border-style: solid;
-    border-left-width: 1px;     
-    border-bottom-width: 1px;  
+    font-weight: 700;
+    // padding: 0 0.45ex;
+    // display: inline-block;
+    // background-color: darken(white, 1);
+    // text-decoration: none;
+    // border-color: darken(white, 9);
+    // border-style: solid;
+    // border-left-width: 1px;     
+    // border-bottom-width: 1px;  
     &:after {
       content: ' →';
       text-decoration: none;
       font-size: 12px;
     }
     &[data-fancy-content] {
-        border-left-width: 0px;           
-        border-right-width: 1px; 
-        margin-right: 1px;
       &:after {
         content: '';
-        font-size: 15px;
-        color: #cc0000;
       }
       &:hover {
       };
     };
     &:hover {
-      border-color: darken(white, 13);
       color: #bb0000; 
     }
   }

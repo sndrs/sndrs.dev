@@ -29,13 +29,18 @@
 }
 
 .entry {  
-  border-left: 2px solid $bg-color;
   border-top: none;
   background-color: $highlight-bg-color;
+  border-left: 2px solid $bg-color;
   @include margin-trailer();
   &:last-child {
     @include margin-trailer(0);
   }
+}
+
+.entry-title {
+  @include adjust-font-size-to($base-font-size * 2);
+  @include adjust-leading-to(0.8);
 }
 
 .entry-tech {
@@ -48,7 +53,7 @@
 
 #timelines {
   display: block;
-  position: fixed;  
+  position: fixed;
   width: rhythm();
   top: rhythm();
   bottom: rhythm();

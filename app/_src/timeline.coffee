@@ -103,12 +103,12 @@ do ($ = jQuery) ->
                       'background-color': data.highlight
                       zIndex: 100
                     data.eventEl.css 
-                      'border-color': data.highlight
+                      'border-left-color': data.highlight
                 else if hightlighted
                   $timelineEvent.css 
                     'background-color': data.bgColor
                     zIndex: 1
                   data.eventEl.css 
-                    'border-color': data.bgColor
+                    'border-left-color': data.bgColor
 
           updatingTimeline = false    
