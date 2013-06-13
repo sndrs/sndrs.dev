@@ -95,7 +95,7 @@ do ($ = jQuery) ->
             for $timelineEvent in timelineEvents
               do ($timelineEvent) ->
                 data = $timelineEvent.data()
-                hightlighted = $timelineEvent.css('zIndex') isnt '1'
+                hightlighted = parseInt($timelineEvent.css('zIndex')) isnt 1
                 if data.top + scrollTop >= data.eventTop and data.bottom + scrollTop <= data.eventBottom
                   if not hightlighted
                     data.bgColor = data.eventEl.css 'background-color'
