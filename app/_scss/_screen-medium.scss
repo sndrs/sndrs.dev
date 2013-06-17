@@ -11,11 +11,10 @@
   h1 {
     @include leader(0.1);
   }
-  h3 {
-    @include leader(1);
-  }
-  dl {
-    @include leader(0);
+  #tl-dr {
+    p {
+      max-width: rhythm(26);
+    }
   }
 }
 

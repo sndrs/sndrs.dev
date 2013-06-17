@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width">
 
     <!-- build:css(.tmp) /css/main.css -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/jquery.fancybox.css" type="text/css" media="screen" />
     <!-- endbuild -->
 
     <script src="//use.typekit.net/ezm5jfk.js"></script>
@@ -21,7 +21,10 @@
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
+    {% include colophon.html %}
+    <div id="timelines"></div>
     {{ content }}
+    <p id="updated">Updated {{site.time | date: "%m/%Y" }}.</p>
     {% include scripts.html %}
     {% include googleanalytics.html %}
   </body>

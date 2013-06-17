@@ -1,8 +1,5 @@
-{% include colophon.html %}
-<div id="timelines"></div>
 <ul id="entries">
   {% for post in posts %}
     {% include entry.html %}
   {% endfor %}
 </ul>
-<p id="updated">Updated {{site.time | date: "%m/%Y" }}.</p>
