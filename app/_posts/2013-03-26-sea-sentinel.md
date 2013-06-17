@@ -2,7 +2,7 @@
 title:  "Sea Sentinel"
 categories: music work
 start: 2013-03-26
-role: Promo director &amp; programmer
+role: Director &amp; programmer
 tech: 
  - iPhone
  - VDMX
