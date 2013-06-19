@@ -11,9 +11,23 @@
   h1 {
     @include leader(0.1);
   }
+  h3 {
+    display: none;
+  }
   #tl-dr {
+    display: block;
+    @include leader();
+    h2 {
+      font-style: italic;
+    }
     p {
+      @include adjust-font-size-to($base-font-size * 0.7);
+      @include adjust-leading-to(1);
       max-width: rhythm(26);
+    }
+    em {
+      font-style: normal;
+      font-weight: 700;
     }
   }
 }

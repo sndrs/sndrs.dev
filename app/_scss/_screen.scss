@@ -134,18 +134,7 @@ code, kbd {
     padding: 0 0.5ex;
   }
   #tl-dr {
-    @include leader();
-    h2 {
-      font-style: italic;
-    }
-    p {
-      @include adjust-font-size-to($base-font-size * 0.7);
-      @include adjust-leading-to(1);
-    }
-    em {
-      font-style: normal;
-      font-weight: 700;
-    }
+    display: none;
   }
 }
 
