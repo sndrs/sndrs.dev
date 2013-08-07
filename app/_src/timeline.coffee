@@ -29,9 +29,10 @@ do ($ = jQuery) ->
         # Work out how long the timeline is, based on the text in the `<time>` elements.
         # Assumes $events elements are already ordered, recent first and that they will all contain at least a .start element.        
         $firstEvent = $events.first()
-        @endDate = new Date $firstEvent.find('.end').data('date') ? $firstEvent.find('.start').data('date')
-        @startDate = new Date $events.last().find('.start').data('date')
-        timelineDuration = (Date.parse(@endDate) - Date.parse(@startDate)) / 1000 / 60 / 60 / 24
+        @endDate = Date.parse new Date $firstEvent.find('.end').data('date') ? $firstEvent.find('.start').data('date')
+        @startDate = Date.parse new Date $events.last().find('.start').data('date')
+        timelineDuration = (@endDate - @startDate) / 1000 / 60 / 60 / 24
+        settings.startDate = @endDate / 1000 / 60 / 60 / 24
 
         # Generate each '$timelineEvent' from the list of '$events'
         timelineEvents = $.map $events, (event, i) ->
@@ -45,7 +46,7 @@ do ($ = jQuery) ->
             eventEl: $event
             highlight: "##{settings.colours[i%settings.colours.length]}"
 
-          top = Math.floor (settings.startDate - (data.endDate ? data.startDate)) / timelineDuration * 100
+          top = Math.ceil (settings.startDate - (data.endDate ? data.startDate)) / timelineDuration * 100
           bottom = 100 - Math.floor (settings.startDate - data.startDate) / timelineDuration * 100
           $("<a id='tl_#{$event.attr 'id'}' class='timeline-event' />").data(data).css(
             "top": "#{top}%"
