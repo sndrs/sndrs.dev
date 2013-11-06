@@ -13,7 +13,8 @@ var yeomanConfig = {
   js: 'js',
   jsPre: '_src',
   img: 'image',
-  fonts: 'fonts'
+  fonts: 'fonts',
+  content: 'content'
 };
 
 module.exports = function (grunt) {
@@ -312,6 +313,7 @@ module.exports = function (grunt) {
             '<%= yeoman.css %>/**/*',
             '<%= yeoman.img %>/**/*',
             '<%= yeoman.fonts %>/**/*',
+            '<%= yeoman.content %>/**/*',
             // Exclude these from build - add them to usemin blocks if you need files from here.
             '!js/**',
             '!css/**'
