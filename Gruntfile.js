@@ -14,7 +14,7 @@ var yeomanConfig = {
   jsPre: '_src',
   img: 'image',
   fonts: 'fonts',
-  content: 'content'
+  content: 'examples'
 };
 
 module.exports = function (grunt) {
