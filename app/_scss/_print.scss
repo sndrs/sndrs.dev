@@ -9,6 +9,12 @@ body {
   padding: rhythm(4);
   color: $text-color;
   background-color: $bg-color;
+  text-align: center;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }
 
 #timelines {
@@ -16,23 +22,27 @@ body {
 }
 
 h1 {
-  @include adjust-font-size-to($base-font-size * 4);
+  @include adjust-font-size-to($base-font-size * 2);
 }
 
-#colophon {
+#tl-dr {
+  display: none;
+}
+
+h3 {
+  // @include adjust-font-size-to($base-font-size * 1.3);
+  @include leader(1);
 }
 
 #contact {
+  @include adjust-font-size-to($base-font-size * 0.7);
+  // @include leader(0.3);
   dt {
-    display: inline-block;
-    padding-right: 1ex;
-    &:after {
-      content: ': ';
-    }
+    display: none;
   }
   dd {
     display: inline-block;
-    margin-right: 1em;
+    padding: 0 0.5ex;
   }
 }
 
@@ -42,29 +52,51 @@ em, q {
 
 code, kbd {
   font-family: Inconsolata, Menlo, Consolas, "Panic Sans", Courier, monospace;
-  @include adjust-font-size-to(11px);
+  @include adjust-font-size-to(9px);
 }
 
 .activity {
   font-style: italic;
 }
 
-.detail {
-  @include adjust-font-size-to($base-font-size * 0.8);
+#entries {
+  clear: both;
 }
 
 .entry {
-  page-break-inside: avoid
+  text-align: left;
+  @include leader(2);
+  page-break-inside: avoid;
 }
 
 .entry-title {
-  @include leader(1);
-  @include adjust-font-size-to($base-font-size * 2);
+  font-size: 1.5em;
+  display: inline-block;
+  margin-right: 1ex;
+}
+
+.activity {
+  display: inline-block;
+}
+
+.detail {
+  font-size: 0.7em;
+  @include leader(-0.3);
 }
 
 .entry-content {
+  clear: both;
   p {
     @include leader(0.5);
+  }
+  a {
+    &:after {
+      content: ' (' attr(href) ') ';
+      font-style: italic;
+    }
+    &[data-fancy-content]:after {
+      content: '';
+    }
   }
   .fancy-content {
     display: none;
@@ -72,16 +104,14 @@ code, kbd {
 }
 
 .entry-external-url {
-  @include padding-leader(1);
-  display: inline-block;
+  @include leader(0.5);
+  display: block;
+  font-style: italic;
 }
 
 .entry-tech {
-  @include leader(0.5);
-  &:before {
-    content: 'Technologies: ';
-    font-style: italic;
-  }
+  @include leader(1);
+  @include adjust-font-size-to($base-font-size * 0.6);
 }
 
 #updated {

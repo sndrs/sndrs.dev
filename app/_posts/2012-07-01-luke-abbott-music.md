@@ -9,4 +9,4 @@ tech:
 ---
 Luke Abbott is a well known electronic musician, and he wanted to revamp his his personal site (which also functions as his main online presence).
 
-I <a href="/examples/lukeabbottmusic.co.uk">redesigned it</a> to be an evolution of his then-current blog, trying to retain its intimacy and personality.
+I <a href="http://snd.rs/examples/lukeabbottmusic.co.uk">redesigned it</a> to be an evolution of his then-current blog, trying to retain its intimacy and personality.
