@@ -35,5 +35,8 @@ Thumbs.db
 # Ignore for Yeoman-Jekyll projects #
 app/bower_components
 # dist
+dist/education
+dist/music
+dist/work
 node_modules
 .tmp
