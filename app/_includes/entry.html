@@ -1,8 +1,8 @@
-<li class="entry" data-type="{{ post.categories }}">
+<article class="entry" data-type="{{ post.categories }}">
   {% if post.title %}<h2 class="entry-title">{{ post.title }}</h2>{% endif %}
   {% if post.role %}<p class="activity">{{ post.role }}</p>{% endif %}
   {% include date.html %}
   {% if post.content %}<div class="entry-content">{{ post.content }}</div>{% endif %}
   {% if post.external_url %}<a class="entry-external-url" href="{{post.external_url}}">{{post.external_url}}</a>{% endif %}
-  {% if post.tech %}<p class="entry-tech">{{ post.tech | join: ', ' }}.</p>{% endif %}    
-</li>
+  {% if post.tech %}<footer class="entry-tech">{{ post.tech | join: ', ' }}.</footer>{% endif %}
+</article>

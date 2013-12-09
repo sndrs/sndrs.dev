@@ -24,10 +24,14 @@
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
     {% include colophon.html %}
-    <div id="timelines"></div>
     {{ content }}
-    <p id="updated">Updated {{site.time | date: "%m/%Y" }}.</p>
-    {% include scripts.html %}
+    <footer id="updated">Updated {{site.time | date: "%m/%Y" }}.</footer>
+    <div id="timelines"></div>
+    <!-- build:js(.tmp) /js/main.js -->
+    <script src="/bower_components/jquery/jquery.js"></script>
+    <script src="/js/timeline.js"></script>
+    <script src="/js/main.js"></script>
+    <!-- endbuild -->
     {% include googleanalytics.html %}
   </body>
 </html>
