@@ -1,9 +1,12 @@
 @import 'compass';
 
-@media screen {
-  @import 'jquery.fancybox';
-}
-
 @media print {
   @import 'print';
+}
+
+@media screen {
+  // overide the magnific defaults
+  .mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close, .mfp-zoom {
+    cursor: default;
+  }
 }

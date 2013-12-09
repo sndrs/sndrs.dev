@@ -82,7 +82,7 @@ code, kbd {
       text-decoration: none;
       font-size: 12px;
     }
-    &[data-fancy-content] {
+    &.lightbox {
       &:after {
         content: '';
       }
@@ -93,7 +93,7 @@ code, kbd {
       color: #bb0000;
     }
   }
-  .fancy-content {
+  .lightbox-content {
     display: none;
   }
 }

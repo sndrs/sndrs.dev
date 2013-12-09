@@ -1,30 +1,38 @@
 # shim layer with setTimeout fallback
 window.requestAnimFrame = do ->
-  window.requestAnimationFrame or 
-  window.webkitRequestAnimationFrame or 
-  window.mozRequestAnimationFrame or 
-  window.oRequestAnimationFrame or 
-  window.msRequestAnimationFrame or 
+  window.requestAnimationFrame or
+  window.webkitRequestAnimationFrame or
+  window.mozRequestAnimationFrame or
+  window.oRequestAnimationFrame or
+  window.msRequestAnimationFrame or
   (callback) -> window.setTimeout callback, 1000 / 60
 
 $ ->
   $('#entries').timeline()
-  $('[data-fancy-content]').click (e) -> 
-    e.preventDefault() 
-    $.fancybox($("##{$(@).data('fancy-content')}").children().map( -> 
-      $this = $(this)
-      href: $this.data('src')
-      title: $this.attr('alt')
-    ).toArray(), {
-      loop: false
-      openEffect: 'fade'
-      closeEffect: 'fade'
-      nextEffect: 'elastic'
-      prevEffect: 'elastic'
-      caption: 
-        type: 'inside'
-      theme: 'light'        
-    })
+
+  $('.lightbox').click (e) ->
+    e.preventDefault()
+    $this = $(@)
+    href = $this.attr('href')
+    if href.indexOf('#') is 0
+      items = $(href).children().map( ->
+        $this = $(@)
+        src: $this.data('src')
+        title: $this.attr('alt')
+        type: $this.attr('type') ? 'image'
+      ).toArray()
+    else
+      items =
+        src: href
+        type: $this.attr('type') ? 'iframe'
+    $.magnificPopup.open
+      items: items
+      iframe:
+        patterns:
+          soundcloud:
+            index: 'soundcloud.com'
+      gallery:
+        enabled: true
 
 
 
