@@ -384,7 +384,7 @@ module.exports = function (grunt) {
     embed: {
         main: {
             options: {
-              threshold: '20KB'
+              threshold: '6KB'
             },
             files: {
                 '<%= yeoman.dist %>/index.html': '<%= yeoman.dist %>/index.html'
