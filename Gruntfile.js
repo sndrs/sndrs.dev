@@ -380,6 +380,16 @@ module.exports = function (grunt) {
         'copy:stageJs',
         'copy:stageComponents'
       ]
+    },
+    embed: {
+        main: {
+            options: {
+              threshold: '20KB'
+            },
+            files: {
+                '<%= yeoman.dist %>/index.html': '<%= yeoman.dist %>/index.html'
+            }
+        }
     }
   });
 
@@ -430,6 +440,7 @@ module.exports = function (grunt) {
     'svgmin',
     'rev',
     'usemin',
+    'embed',
     'htmlmin'
     ]);
 

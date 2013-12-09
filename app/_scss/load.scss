@@ -1,0 +1,9 @@
+@import 'compass';
+
+@media screen {
+  @import 'jquery.fancybox';
+}
+
+@media print {
+  @import 'print';
+}

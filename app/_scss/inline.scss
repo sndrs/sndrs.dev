@@ -5,9 +5,5 @@ html, body {font-family: "minion-pro", "Times New Roman", sans-serif;}
 
 @media screen {
   @import 'screen';
-  @import 'jquery.fancybox';
 }
 
-@media print {
-  @import 'print';
-}
