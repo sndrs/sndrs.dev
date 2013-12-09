@@ -78,9 +78,9 @@ code, kbd {
     // border-left-width: 1px;
     // border-bottom-width: 1px;
     &:after {
-      content: ' →';
-      text-decoration: none;
-      font-size: 12px;
+      content: '→';
+      font-family: Arial Unicode MS;
+      font-size: 14px;
     }
     &.lightbox {
       &:after {
