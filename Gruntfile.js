@@ -394,6 +394,12 @@ module.exports = function(grunt) {
         }
       }
     }
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: '**/*'
+    }
   });
 
   // Load plugins
@@ -447,8 +453,7 @@ module.exports = function(grunt) {
     'htmlmin'
   ]);
 
-  grunt.registerTask('default', [
-    'report',
-    'build'
+  grunt.registerTask('deploy', [
+    'gh-pages'
   ]);
 };
