@@ -1,8 +1,10 @@
 // Generated on 2013-05-31 using generator-jekyllrb 0.2.3. Yo Jekyll!
 'use strict';
 var LIVERELOAD_PORT = 35729;
-var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
-var mountFolder = function (connect, dir) {
+var lrSnippet = require('connect-livereload')({
+  port: LIVERELOAD_PORT
+});
+var mountFolder = function(connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
 var yeomanConfig = {
@@ -17,7 +19,7 @@ var yeomanConfig = {
   content: 'examples'
 };
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
   // Configuration
   grunt.initConfig({
@@ -38,7 +40,8 @@ module.exports = function (grunt) {
       },
       jekyll: {
         files: ['<%= yeoman.app %>/**/*.{html,yml,md,mkd,markdown}',
-                '!<%= yeoman.app %>/bower_components'],
+          '!<%= yeoman.app %>/bower_components'
+        ],
         tasks: ['jekyll:server']
       },
       livereload: {
@@ -61,7 +64,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          middleware: function (connect) {
+          middleware: function(connect) {
             return [
               lrSnippet,
               mountFolder(connect, '.tmp'),
@@ -73,7 +76,7 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          middleware: function (connect) {
+          middleware: function(connect) {
             return [
               mountFolder(connect, '.tmp'),
               mountFolder(connect, 'test')
@@ -83,7 +86,7 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
-          middleware: function (connect) {
+          middleware: function(connect) {
             return [
               mountFolder(connect, yeomanConfig.dist)
             ];
@@ -172,18 +175,18 @@ module.exports = function (grunt) {
       // https://github.com/dannygarcia/grunt-jekyll/pull/14
       dist: {
         bundleExec: true,
-        src : '<%= yeoman.app %>',
+        src: '<%= yeoman.app %>',
         dest: '<%= yeoman.dist %>',
-        server : false,
-        auto : false,
+        server: false,
+        auto: false,
         config: '_config.yml,_config.build.yml'
       },
       server: {
         bundleExec: true,
-        src : '<%= yeoman.app %>',
+        src: '<%= yeoman.app %>',
         dest: '.jekyll',
-        server : false,
-        auto : false,
+        server: false,
+        auto: false,
         config: '_config.yml'
       }
     },
@@ -215,7 +218,7 @@ module.exports = function (grunt) {
       },
       // Add files to be tested here
       report: {
-       src: ['<%= yeoman.app %>/<%= yeoman.cssPre %>/main.scss']
+        src: ['<%= yeoman.app %>/<%= yeoman.cssPre %>/main.scss']
       }
     },
     csslint: {
@@ -237,8 +240,8 @@ module.exports = function (grunt) {
     },
     usemin: {
       options: {
-          basedir: '<%= yeoman.dist %>',
-          dirs: ['<%= yeoman.dist %>/**/*']
+        basedir: '<%= yeoman.dist %>',
+        dirs: ['<%= yeoman.dist %>/**/*']
       },
       html: ['<%= yeoman.dist %>/**/*.html'],
       css: ['<%= yeoman.dist %>/<%= yeoman.css %>/**/*.css']
@@ -382,14 +385,14 @@ module.exports = function (grunt) {
       ]
     },
     embed: {
-        main: {
-            options: {
-              threshold: '6KB'
-            },
-            files: {
-                '<%= yeoman.dist %>/index.html': '<%= yeoman.dist %>/index.html'
-            }
+      main: {
+        options: {
+          threshold: '6KB'
+        },
+        files: {
+          '<%= yeoman.dist %>/index.html': '<%= yeoman.dist %>/index.html'
         }
+      }
     }
   });
 
@@ -397,7 +400,7 @@ module.exports = function (grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   // Define Tasks
-  grunt.registerTask('server', function (target) {
+  grunt.registerTask('server', function(target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
     }
@@ -442,7 +445,7 @@ module.exports = function (grunt) {
     'usemin',
     'embed',
     'htmlmin'
-    ]);
+  ]);
 
   grunt.registerTask('default', [
     'report',
