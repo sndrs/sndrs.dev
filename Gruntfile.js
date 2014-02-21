@@ -393,7 +393,7 @@ module.exports = function(grunt) {
           '<%= yeoman.dist %>/index.html': '<%= yeoman.dist %>/index.html'
         }
       }
-    }
+    },
     'gh-pages': {
       options: {
         base: 'dist'
