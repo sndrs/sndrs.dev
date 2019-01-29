@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Hello there</title>
+        <link
+            rel="preload"
+            href="https://cdn.jsdelivr.net/npm/hack-font/build/web/fonts/hack-regular-subset.woff2?sha=e700a30"
+            as="font"
+        />
+        <link
+            rel="preload"
+            href="https://www.google-analytics.com/analytics.js"
+            as="script"
+        />
+        <style>
+            @font-face {
+                font-family: Hack;
+                src: url(https://cdn.jsdelivr.net/npm/hack-font/build/web/fonts/hack-regular-subset.woff2?sha=e700a30)
+                        format('woff2'),
+                    url(https://cdn.jsdelivr.net/npm/hack-font/build/web/fonts/hack-regular-subset.woff?sha=e700a30)
+                        format('woff');
+                font-weight: 400;
+                font-style: normal;
+                font-display: fallback;
+            }
+
+            body {
+                padding: 1rem;
+                margin: 0;
+                font-size: 14px;
+                line-height: 1.5;
+                font-family: Hack, Monaco, Droid Sans Mono, monospace;
+            }
+
+            p {
+                padding: 0;
+                margin: 0;
+                margin-bottom: 1rem;
+                max-width: 30ch;
+            }
+
+            .wave {
+                font-family: initial;
+            }
+
+            img {
+                display: block;
+                margin: 0.25rem 0 1.5rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <p class="wave">👋</p>
+            <section>
+                <p>
+                    I'm a lead developer at the Guardian, and I'm on
+                    <a href="https://twitter.com/asanders">twitter</a> and
+                    <a href="https://github.com/sndrs">github</a>.
+                </p>
+            </section>
+            <aside>
+                <p>
+                    I look like this: <img
+                    src="https://www.gravatar.com/avatar/c711567c6f417313d32fef1aada043a0?s=160"
+                    width="80" height "80" alt="A picture of me" />
+                </p>
+            </aside>
+        </main>
+        <footer><p>Bye!</p></footer>
+        <!-- Google Analytics -->
+        <script>
+            window.ga =
+                window.ga ||
+                function() {
+                    (ga.q = ga.q || []).push(arguments);
+                };
+            ga.l = +new Date();
+            ga('create', 'UA-21463501-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <script
+            async
+            src="https://www.google-analytics.com/analytics.js"
+        ></script>
+        <!-- End Google Analytics -->
+    </body>
+</html>
