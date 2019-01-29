@@ -30,7 +30,7 @@ Thumbs.db
 *.jar
 *.rar
 *.tar
-*.zip
+
 
 # Ignore for Yeoman-Jekyll projects #
 app/bower_components
