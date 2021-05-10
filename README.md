@@ -1,1 +1,1 @@
-http://snd.rs
+http://sndrs.dev
